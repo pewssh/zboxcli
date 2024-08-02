@@ -35,6 +35,7 @@ var uploadCmd = &cobra.Command{
 		}
 
 		allocationID := cmd.Flag("allocation").Value.String()
+		sdk.SetUploadMode(sdk.UploadModeHigh)
 		allocationObj, err := sdk.GetAllocation(allocationID)
 		if err != nil {
 			PrintError("Error fetching the allocation.", err)
